@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.gson.GsonProperties;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfigs appConfigs = new AppConfigs();
+        MemberService memberService = appConfigs.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP); //단축키 ctrl + alt + V
         memberService.join(member);
 
